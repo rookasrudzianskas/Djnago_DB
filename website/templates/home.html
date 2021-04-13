@@ -1,9 +1,12 @@
 <h1>Members Database</h1>
 
 {% for item in all %}
-    <p>{{ item.fname }}</p>
-    <p>{{ item.lname }}</p>
-    <p>{{ item.email }}</p>
-    <p>{{ item.age }}</p>
+    <strong><p>{{ item.fname }}</p></strong>
+        <ul>
+            <li>{{ item.lname }}</li>
+            <li>{{ item.email }}</li>
+            <li>{{ item.age }}</li>
+        </ul>
+    <hr>
 
 {% endfor %}
