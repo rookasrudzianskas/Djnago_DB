@@ -4,7 +4,7 @@
 
     <h1>Join today</h1><br>
 
-    <form method="post" action="{% url 'join' %}">
+    <form method="POST" action="{% url 'join' %}">
     {% csrf_token %}
       <div class="mb-3">
     <input type="text" class="form-control" placeholder="First Name" name="fname">
