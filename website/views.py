@@ -18,9 +18,25 @@ def join(request):
         form = MemberForm(request.POST or None)
         if form.is_valid():
             form.save()
+        else:
+            fname = request.POST['fname']
+            lname = request.POST['lname']
+            age = request.POST['age']
+            email = request.POST['email']
+            passwd = request.POST['passwd']
+
+            messages.success(request, "There was an error in your form. Please try again")
+            # return redirect('join')
+            return render(request, 'join.html', {
+                'fname':fname,
+                'lname':lname,
+                'age': age,
+                'email':email,
+                'passwd': passwd,
+            })
+
         messages.success(request, "Your form has been submitted successfully!")
         return redirect('home')
-
     else:
         return render(request, 'join.html', {
 
