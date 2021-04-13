@@ -1,6 +1,7 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from .models import Member
 from .forms import MemberForm
+from django.contrib import messages
 
 
 # Create your views here.
@@ -17,9 +18,8 @@ def join(request):
         form = MemberForm(request.POST or None)
         if form.is_valid():
             form.save()
-        return render(request, 'join.html', {
-
-        })
+        messages.success(request, "Your form has been submitted successfully!")
+        return redirect('home')
 
     else:
         return render(request, 'join.html', {
