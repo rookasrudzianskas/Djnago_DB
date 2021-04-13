@@ -1,1 +1,9 @@
-Hello world
+<h1>Members Database</h1>
+
+{% for item in all %}
+    <p>{{ item.fname }}</p>
+    <p>{{ item.lname }}</p>
+    <p>{{ item.email }}</p>
+    <p>{{ item.age }}</p>
+
+{% endfor %}
