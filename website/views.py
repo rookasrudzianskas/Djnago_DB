@@ -10,3 +10,8 @@ def home(request):
         'all': all_members
     })
 
+def join(request):
+    return render(request, 'join.html', {
+
+    })
+
